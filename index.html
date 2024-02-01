@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- header -
+image - logo
+h1 - game name -->
+    <header id="headerGroup">
+      <img
+        class="logo"
+        src="https://th.bing.com/th/id/OIG.AOo0uANacjEgZOhS7Mmm?w=1024&h=1024&rs=1&pid=ImgDetMain"
+        alt="Quiz Quest Logo"
+      />
+      <h1>Quiz Quest</h1>
+      <button id="resetButton" class="progressButtons" onclick="reset()">
+        Reset
+      </button>
+    </header>
+    <br />
+
+    <!-- label - name
+text input field
+label - number of questions
+number input field - use max value -->
+    <div class="inputColumn" id="inputColumnID">
+      <div class="inputRow">
+        <label for="username">Your name:</label>
+        <input type="text" id="username" placeholder="Enter your name" />
+      </div>
+      <br />
+      <div class="inputRow">
+        <label for="numOfQuestions">Number of questions:</label>
+        <input
+          type="number"
+          id="numOfQuestions"
+          placeholder="Max 15 questions"
+          max="15"
+          min="1"
+        />
+      </div>
+    </div>
+    <!-- button - start -->
+    <div id="startButton" class="start">
+      <br />
+      <button class="startQuizButton" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- good luck message -->
+    <p id="goodLuckMessage"></p>
+
+    <!-- button next question -->
+    <div id="nextQuestionButton">
+      <button id="moveToNextQuestion" class="progressButtons">
+        Next Question
+      </button>
+    </div>
+
+    <!-- paragraph - question number & question
+four buttons with 1 correct answer and 3 incorrect answers -->
+    <div id="askQuestion">
+      <p id="questionNumber" class="question"></p>
+    </div>
+    <div id="answerChoices">
+      <ol type="A" class="answerList">
+        <li id="choiceA"></li>
+        <li id="choiceB"></li>
+        <li id="choiceC"></li>
+        <li id="choiceD"></li>
+      </ol>
+    </div>
+    <div id="selectAnswer">
+      <button
+        class="answerButton"
+        id="buttonA"
+        onclick="buttonColourChange(this)"
+        data-buttonChoice="A"
+      >
+        A
+      </button>
+      <button
+        class="answerButton"
+        id="buttonB"
+        onclick="buttonColourChange(this)"
+        data-buttonChoice="B"
+      >
+        B
+      </button>
+      <button
+        class="answerButton"
+        id="buttonC"
+        onclick="buttonColourChange(this)"
+        data-buttonChoice="C"
+      >
+        C
+      </button>
+      <button
+        class="answerButton"
+        id="buttonD"
+        onclick="buttonColourChange(this)"
+        data-buttonChoice="D"
+      >
+        D
+      </button>
+    </div>
+    <div id="timer">
+      <p id="countdown"></p>
+    </div>
+  </body>
+</html>
