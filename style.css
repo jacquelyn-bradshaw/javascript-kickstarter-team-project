@@ -75,6 +75,13 @@ input {
   font-size: 25px;
   border-width: 1px;
 }
+
+.startQuizButton:hover,
+#resetButton:hover,
+#moveToNextQuestion:hover {
+  background-color: #42b0f5;
+}
+
 .startQuizButton:focus,
 #nextQuestion:focus {
   outline-color: transparent;
