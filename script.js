@@ -16,10 +16,12 @@ const goodLuckMessage = document.getElementById("goodLuckMessage");
 
 // create element
 let congratsMessage = document.createElement("div");
-congratsMessage.style.fontSize = "26px";
-congratsMessage.style.textAlign = "center";
-congratsMessage.style.color = "blue";
-congratsMessage.style.marginTop = "20px";
+// add class name to div to support animation
+congratsMessage.className = "congratsMessageDiv";
+// congratsMessage.style.fontSize = "26px";
+// congratsMessage.style.textAlign = "center";
+// congratsMessage.style.color = "blue";
+// congratsMessage.style.marginTop = "20px";
 
 // create global variable to capture quiz question number. This number is used in button colour change function later on
 let globalQuestionNumber = 0;
@@ -65,17 +67,20 @@ const questionsAndAnswers = [
     "What is the fastest land animal?",
     ["Cheetah", "Springbok", "Horse", "Wildebeest", "Cheetah"]
   ],
-  [
-    "How many continents are there in the world?",
-    ["6", "5", "8", "7", "7"]
-  ],
+  ["How many continents are there in the world?", ["6", "5", "8", "7", "7"]],
   [
     "What is the largest mammal in the world?",
     ["Hippopotamus", "Blue Whale", "Giraffe", "Elephant seal", "Blue Whale"]
   ],
   [
     "Which fictional wizard lives at 4 Privet Drive, Little Whinging?",
-    ["Albus Dumbledore", "Ron Weasley", "Harry Potter", "Hermione", "Harry Potter"]
+    [
+      "Albus Dumbledore",
+      "Ron Weasley",
+      "Harry Potter",
+      "Hermione",
+      "Harry Potter"
+    ]
   ],
   [
     "What is the name of the streaming service that hosts Stranger Things?",
@@ -83,7 +88,13 @@ const questionsAndAnswers = [
   ],
   [
     "What is the process by which plants make their own food called?",
-    ["Photosynthesis", "Respiration", "Transpiration", "Photoperiodism", "Photosynthesis"]
+    [
+      "Photosynthesis",
+      "Respiration",
+      "Transpiration",
+      "Photoperiodism",
+      "Photosynthesis"
+    ]
   ],
   [
     "What is the largest organ in the human body?",
@@ -103,7 +114,13 @@ const questionsAndAnswers = [
   ],
   [
     "Who was the first person to step on the moon?",
-    ["Buzz Aldrin", "Pete Conrad", "Neil Armstrong", "Alan Bean", "Neil Armstrong"]
+    [
+      "Buzz Aldrin",
+      "Pete Conrad",
+      "Neil Armstrong",
+      "Alan Bean",
+      "Neil Armstrong"
+    ]
   ],
   [
     "What is the largest planet in our solar system?",
@@ -162,7 +179,7 @@ function nextQuestion(numQuestions) {
     } else {
       moveToNextQuestion.removeEventListener("click", eventListenerFunction);
       console.log(`index is ${globalQuestionNumber}, end of quiz`);
-      congratsMessage.innerHTML = `Congratulations, your score was ${score}!`;
+      congratsMessage.innerHTML = `Congratulations, your score was ${score} out of ${numQuestions}`;
       document.body.appendChild(congratsMessage);
       clearInterval(countdownInterval);
       countingElement.innerHTML = "";
@@ -289,13 +306,13 @@ const countingElement = document.getElementById("countdown");
 let countdownInterval;
 
 function startCountdown() {
-    countingElement.style.display = "block";
-    // Reset time to starting value when the button is clicked
-    time = startingMinutes * 60;
-    // Clear the existing interval before setting up a new one
-    clearInterval(countdownInterval);
-    countdownInterval = setInterval(updateCountdown, 1000);
-    startButton.disabled = true; // Disable the button once clicked
+  countingElement.style.display = "block";
+  // Reset time to starting value when the button is clicked
+  time = startingMinutes * 60;
+  // Clear the existing interval before setting up a new one
+  clearInterval(countdownInterval);
+  countdownInterval = setInterval(updateCountdown, 1000);
+  startButton.disabled = true; // Disable the button once clicked
 }
 
 function updateCountdown() {

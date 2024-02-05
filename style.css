@@ -126,11 +126,6 @@ input {
   border-width: 1px;
 }
 
-/* .answerButton:hover {
-  background-color: #42b0f5;
-  transition: 0.7s;
-} */
-
 .progressButtons {
   height: auto;
   width: auto;
@@ -150,4 +145,34 @@ input {
 #countdown {
   font-size: 30px;
   display: hidden;
+}
+
+/* animation */
+@keyframes colorChange {
+  0% {
+    color: blue; left: 0px; top:0px;
+  }
+  25% {
+    color: purple; left: 20px; top:20px;
+  }
+  50% {
+    color: red; left: 0px; top: 20px;
+  }
+  75% {
+    color: indigo; left: 20px; top: 0px;
+  }
+  100% {
+    color: green; left: 0px; top: 0px;
+  }
+}
+
+.congratsMessageDiv {
+  font-size: 26px;
+  text-align: center;
+  color: blue;
+  position: relative;
+  animation-name: colorChange;
+  margin-top: 20px;
+  animation-duration: 1.5s;
+  animation-iteration-count: 5;
 }
