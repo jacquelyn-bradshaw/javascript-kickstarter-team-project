@@ -1,4 +1,4 @@
-# javascript-kickstarter-team-project
+# javascript-team-project
 
 An interactive multiple choice quiz
 
